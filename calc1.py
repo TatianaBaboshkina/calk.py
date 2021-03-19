@@ -10,18 +10,21 @@ str_B = ''
 
 operation = ''
 i=0
+
 while i < len(str_command):
-      print (str_command [i])
-      if str_command [i] == '+' or str_command [i] == '-' or str_command [i] == '*' or str_command [i] == '/' or str_command [i] == '^':
-             if str_A == '':
-                    signFirst = str_command [i]
-             elif operation != '':
-                    signSecond = str_command [i]
-    else:
-        if operation == '':
-            str_A = str_A + str_command [i]
+    print (str_command [i])
+    if str_command[i] == '+' or str_command[i] == '-' or str_command[i] == '*' or str_command[i] == '/' or str_command[i] == '^':
+        if str_A == '':
+            signFirst = str_command[i]
+        elif operation != '':
+            signSecond = str_command[i]
         else:
-            str_B = str_B + str_command [i]
+            operation = str_command[i]
+    else:   
+        if operation == '':
+            str_A = str_A + str_command[i]
+        else:
+            str_B = str_B + str_command[i]
     i += 1 #i=i+1
     pass
     
