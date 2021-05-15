@@ -10,3 +10,12 @@
 
 В качестве библиотиеки будет использована корпоративна база с результатами опроса клиентов по качеству обслуживания в ДЦ ГАЗ
 """
+
+import openpyxl
+
+wb_obj = openpyxl.load_workbook("OKO.xlsx")
+sheet_obj = wb_obj.active
+cell_obj = sheet_obj.cell(row = 3, column = 3)
+kriteri = sheet_obj.cell(row = 3, column = 2)
+print(cell_obj.value)
+print(kriteri.value)
